@@ -1,5 +1,5 @@
 [Unit]
-Description=ByRyan Web Application
+Description=ryannicoletti.net service
 After=postgresql.service
 After=network-online.target
 Wants=network-online.target

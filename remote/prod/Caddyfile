@@ -1,4 +1,4 @@
-byryan.net {
+ryannicoletti.net {
     reverse_proxy localhost:4000
     respond /debug/* "Not Permitted" 403
     header {
