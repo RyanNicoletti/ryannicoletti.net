@@ -80,12 +80,11 @@ build:
 # PROD
 # ==================================================================================== #
 
-## deploy: deply the app to the pi
+## deploy: deploy the app to the pi
 .PHONY: deploy
 deploy:
 	@echo 'Deploying to production...'
 	rsync -P -e "ssh -p $(production_host_port)" ./bin/linux_arm64/web byryan@$(production_host_ip):/opt/byryan/
 	rsync -rP --delete -e "ssh -p $(production_host_port)" ./migrations byryan@$(production_host_ip):/opt/byryan/
 	rsync -P -e "ssh -p $(production_host_port)" ./remote/prod/ryannicoletti.service byryan@$(production_host_ip):~
-	rsync -P -e "ssh -p $(production_host_port)" ./remote/prod/Caddyfile byryan@$(production_host_ip):~
-	ssh -t -p $(production_host_port) byryan@$(production_host_ip) "source /etc/byryanweb/production.env && migrate -path /opt/byryan/migrations -database \$$PROD_DB_DSN up && sudo mv ~/ryannicoletti.service /etc/systemd/system/ && sudo systemctl enable ryannicoletti && sudo systemctl restart ryannicoletti && sudo mv ~/Caddyfile /etc/caddy/ && sudo systemctl reload caddy"
+	ssh -t -p $(production_host_port) byryan@$(production_host_ip) "source /etc/byryanweb/production.env && migrate -path /opt/byryan/migrations -database \$$PROD_DB_DSN up && sudo mv ~/ryannicoletti.service /etc/systemd/system/ && sudo systemctl enable ryannicoletti && sudo systemctl restart ryannicoletti"
