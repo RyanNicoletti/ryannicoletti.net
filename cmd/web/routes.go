@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"byryan.net/config"
-	"byryan.net/ui"
+	"ryannicoletti.net/config"
+	"ryannicoletti.net/ui"
 )
 
 type MiddlewareChain struct {

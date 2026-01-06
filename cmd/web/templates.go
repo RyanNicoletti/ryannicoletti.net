@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"byryan.net/config"
-	"byryan.net/internal/models"
-	"byryan.net/ui"
+	"ryannicoletti.net/config"
+	"ryannicoletti.net/internal/models"
+	"ryannicoletti.net/ui"
 )
 
 type templateData struct {

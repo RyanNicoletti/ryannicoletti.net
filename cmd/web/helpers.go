@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"byryan.net/config"
+	"ryannicoletti.net/config"
 )
 
 func serverError(app *config.Application, w http.ResponseWriter, r *http.Request, err error) {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"byryan.net/config"
+	"ryannicoletti.net/config"
 )
 
 func commonHeaders(next http.Handler) http.Handler {

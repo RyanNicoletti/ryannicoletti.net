@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"byryan.net/config"
+	"ryannicoletti.net/config"
 )
 
 func main() {

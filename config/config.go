@@ -8,9 +8,9 @@ import (
 	"log/slog"
 	"os"
 
-	"byryan.net/internal/models"
-	"byryan.net/posts"
 	_ "github.com/lib/pq"
+	"ryannicoletti.net/internal/models"
+	"ryannicoletti.net/posts"
 )
 
 type Config struct {
