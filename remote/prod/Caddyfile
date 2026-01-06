@@ -9,3 +9,7 @@ ryannicoletti.net {
         }
     encode gzip
 }
+
+www.ryannicoletti.net {
+    redir https://ryannicoletti.net{uri} permanent
+}
