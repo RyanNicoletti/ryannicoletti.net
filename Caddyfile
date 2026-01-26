@@ -1,0 +1,31 @@
+
+:8080 {
+    root * /var/www/ryannicoletti.net
+    file_server
+
+    # Try to serve files, then try with .html extension, then 404
+    try_files {path} {path}.html {path}/ =404
+
+    # Custom error page
+    handle_errors {
+        respond "{err.status_code} {err.status_text}"
+    }
+
+    # Security headers
+    header {
+        Content-Security-Policy "default-src 'self'; style-src 'self'; script-src 'self'"
+        Referrer-Policy "origin-when-cross-origin"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "deny"
+        X-XSS-Protection "0"
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    }
+
+    # Compress responses
+    encode gzip
+
+    # Logging
+    log {
+        output file /var/log/caddy/ryannicoletti.log
+    }
+}

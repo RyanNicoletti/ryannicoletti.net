@@ -1,0 +1,9 @@
+h2 {
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--dark-green);
+}
+
+.post-content-section {
+  margin-bottom: 2rem;
+}
