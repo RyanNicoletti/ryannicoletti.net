@@ -13,3 +13,9 @@
 
     encode gzip
 }
+
+# birdfeed
+:4001 {
+        reverse_proxy localhost:8080
+        encode gzip
+}
